@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import Chart.js for plotting graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js" defer></script>
+    
+    <!-- import randomColor for choosing random graph palettes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.4/randomColor.js" defer></script>
+    
+    <!-- import slim-select for customizing the select boxes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.20.0/slimselect.min.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.20.0/slimselect.min.css"> 
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>  
+  <body>
+    <main>
+      <h1>
+        Dive into the Stack Overflow 2019 developer survey!
+      </h1>
+      <div class="query-container">
+        <p>
+          <span class="phrase-component">What do</span>
+          
+          <!--
+            The next few 'select' elements set up the dropdown selections so that we can fine-tune
+            the group for which we get data. They include a '--' option to unset that selection.
+          -->
+          <select id="sexuality" name="sexuality-select">
+            <option value="">--</option>
+            <option value="Straight / Heterosexual">straight/heterosexual</option>
+            <option value="Gay or Lesbian">gay or lesbian</option>
+            <option value="Bisexual">bisexual</option>
+          </select>
+          
+          <select id="trans" name="trans-select">
+            <option value="">--</option>
+            <option value="Yes">trans</option>
+            <option value="No">cis</option>
+          </select>
+          
+          <select id="ethnicity" name="ethnicity-select">
+            <option value="">--</option>
+            <option value="Black or of African descent">Black or of African descent</option>
+            <option value="East Asian">East Asian</option>
+            <option value="Hispanic or Latino/Latina">Hispanic or Latino/Latina</option>
+            <option value="Middle Eastern">Middle Eastern</option>
+            <option value="Native American, Pacific Islander, or Indigenous Australian">Native American, Pacific Islander, or Indigenous Australian</option>
+            <option value="South Asian">South Asian</option>
+            <option value="White or of European descent">White or of European descent</option>
+            <option value="biracial">Biracial</option>
+            <option value="multiracial">Multiracial</option>
+          </select>
+          
+          <select id="gender" name="gender-select">
+            <option value="">people</option>
+            <option value="Man">men</option>
+            <option value="Woman">women</option>
+            <option value="Non-binary, genderqueer, or gender non-conforming">non-binary, genderqueer, or gender non-conforming people</option>
+          </select>
+          
+          <select id="dependents" name="dependents-select">
+            <option value="">--</option>
+            <option value="Yes">with dependents</option>
+            <option value="No">without dependents</option>
+          </select>
+          
+          <span class="phrase-component">feel</span>
+          
+          <!--
+            The last 'select' element sets up the dropdown selections for the topic we want
+            to explore.
+          -->
+          <select id="topic" name="topic-select">
+            <option value="JobFactors">are the most important factors in a job?</option>
+            <option value="ITperson">about being the IT person for their family?</option>
+            <option value="Hobbyist">about writing code as a hobby?</option>
+            <option value="JobSat">about their current job?</option>
+            <option value="CareerSat">about their career so far?</option>
+          </select>
+          
+          <button id="ask">
+            ?
+          </button>
+        </p>
+        <p id="sample-size">
+          
+        </p>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="chart" aria-label="A chart showing results of the query" role="img"></canvas>
+      </div>
+      
+    </main>
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
